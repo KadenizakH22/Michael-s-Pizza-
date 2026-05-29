@@ -75,6 +75,15 @@ const dailyDeals = [
   ["Saturday", "BOGO Half Off", "Buy one pizza and get the second pizza half off."],
 ];
 
+const dailyDealImages = [
+  "https://static.wixstatic.com/media/1bcf6f_06b17dd6e23d42ebaad4aecec174522c~mv2.png/v1/fit/w_596%2Ch_391%2Cq_90%2Cenc_avif%2Cquality_auto/1bcf6f_06b17dd6e23d42ebaad4aecec174522c~mv2.png",
+  "https://static.wixstatic.com/media/1bcf6f_4da93bae57dc455a8772ef502ee27b95~mv2.png/v1/fit/w_596%2Ch_389%2Cq_90%2Cenc_avif%2Cquality_auto/1bcf6f_4da93bae57dc455a8772ef502ee27b95~mv2.png",
+  "https://static.wixstatic.com/media/1bcf6f_21ae7bcc792a4d04b4c633640e138886~mv2.png/v1/fit/w_572%2Ch_381%2Cq_90%2Cenc_avif%2Cquality_auto/1bcf6f_21ae7bcc792a4d04b4c633640e138886~mv2.png",
+  "https://static.wixstatic.com/media/1bcf6f_b59c4daaaf7e45e9be014d9ae21b6749~mv2.png/v1/fit/w_597%2Ch_381%2Cq_90%2Cenc_avif%2Cquality_auto/1bcf6f_b59c4daaaf7e45e9be014d9ae21b6749~mv2.png",
+  "https://static.wixstatic.com/media/1bcf6f_2ecb291db5d94aada319467d43a78a87~mv2.png/v1/fit/w_596%2Ch_381%2Cq_90%2Cenc_avif%2Cquality_auto/1bcf6f_2ecb291db5d94aada319467d43a78a87~mv2.png",
+  "https://static.wixstatic.com/media/1bcf6f_a0c1f8e738224687a8cead5f3b27d60d~mv2.png/v1/fit/w_597%2Ch_381%2Cq_90%2Cenc_avif%2Cquality_auto/1bcf6f_a0c1f8e738224687a8cead5f3b27d60d~mv2.png",
+];
+
 const gallery = [
   { src: images.hero, label: "Fresh pizza" },
   { src: images.wings, label: "Saucy wings" },
@@ -168,8 +177,6 @@ function Hero() {
         className="hero-food-crop absolute inset-0 h-full w-full object-cover"
         fetchPriority="high"
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-coal/90 via-ember/72 to-coal/95" />
-      <div className="noise absolute inset-0 opacity-35" />
 
       <div className="section-shell relative z-10 grid min-h-[calc(100vh-6rem)] place-items-center py-20 text-center sm:py-24">
         <div className="max-w-4xl">
@@ -286,15 +293,11 @@ function DealStrip() {
 function PromoPizzaBoxVisual() {
   return (
     <div className="relative mx-auto h-32 w-full max-w-sm" aria-hidden="true">
-      <div className="absolute left-2 top-6 h-24 w-36 rotate-[-7deg] rounded-xl border-4 border-sauce bg-box shadow-card">
-        <div className="absolute inset-3 rounded-lg border-2 border-dashed border-cream/80" />
-        <div className="absolute left-1/2 top-1/2 h-12 w-12 -translate-x-1/2 -translate-y-1/2 rounded-full border-4 border-gold bg-cream">
-          <span className="absolute left-3 top-3 h-2 w-2 rounded-full bg-sauce" />
-          <span className="absolute right-3 top-4 h-2 w-2 rounded-full bg-sauce" />
-          <span className="absolute bottom-3 left-5 h-2 w-2 rounded-full bg-sauce" />
-        </div>
+      <div className="absolute left-3 top-8 h-20 w-40 rotate-[-5deg] rounded-xl border-2 border-sauce/70 bg-box shadow-card">
+        <div className="absolute inset-x-3 top-3 h-3 rounded-full bg-cream/55" />
+        <div className="absolute inset-x-4 bottom-4 h-8 rounded-lg border-2 border-dashed border-cream/75" />
       </div>
-      <div className="absolute right-2 top-1 h-28 w-28 overflow-hidden rounded-full border-4 border-gold bg-paper shadow-card">
+      <div className="absolute right-3 top-0 h-28 w-28 overflow-hidden rounded-full border-4 border-gold bg-paper shadow-card">
         <img
           src={images.pepperoni}
           alt=""
@@ -302,9 +305,17 @@ function PromoPizzaBoxVisual() {
           loading="lazy"
           decoding="async"
         />
+        <div className="absolute inset-0 rounded-full ring-4 ring-inset ring-cream/55" />
       </div>
-      <div className="absolute bottom-1 left-1/2 -translate-x-1/2 rounded-full border-2 border-sauce bg-gold px-4 py-2 text-xs font-black uppercase tracking-[0.18em] text-coal shadow-card">
-        Hot Deal
+      <div className="absolute left-1/2 top-12 grid h-16 w-16 -translate-x-1/2 place-items-center rounded-full border-4 border-cream bg-gold shadow-card">
+        <div className="relative h-10 w-10 rounded-full border-2 border-crust bg-paper">
+          <span className="absolute left-2 top-2 h-2 w-2 rounded-full bg-sauce" />
+          <span className="absolute right-2 top-3 h-2 w-2 rounded-full bg-sauce" />
+          <span className="absolute bottom-2 left-4 h-2 w-2 rounded-full bg-sauce" />
+        </div>
+      </div>
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 rounded-full border-2 border-sauce bg-cream px-4 py-2 text-xs font-black uppercase tracking-[0.18em] text-sauce shadow-card">
+        Michael&apos;s Deal
       </div>
     </div>
   );
@@ -315,25 +326,24 @@ function MiniDealGraphic() {
     <div className="relative h-56 overflow-hidden bg-paper p-4 text-coal">
       <div className="absolute inset-x-0 top-0 h-4 checker-edge" />
       <div className="absolute inset-x-0 bottom-0 h-4 checker-edge" />
-      <div className="relative z-10 flex h-full flex-col justify-between rounded-2xl border-2 border-dashed border-sauce bg-cream px-4 py-5 text-center shadow-card">
-        <div className="flex items-center justify-between gap-3">
+      <div className="relative z-10 flex h-full flex-col justify-between rounded-2xl border-2 border-dashed border-sauce/70 bg-cream px-4 py-5 text-center shadow-card">
+        <div className="flex items-center justify-center">
           <span className="rounded-full bg-sauce px-3 py-1 text-[0.62rem] font-black uppercase tracking-[0.16em] text-cream">
-            Limited
-          </span>
-          <span className="rounded-full bg-gold px-3 py-1 text-[0.62rem] font-black uppercase tracking-[0.16em] text-coal">
             Daily Deal
           </span>
         </div>
-        <div className="mx-auto grid h-16 w-16 place-items-center rounded-full border-4 border-gold bg-paper shadow-card">
-          <div className="relative h-11 w-11 rounded-full border-2 border-crust bg-gold">
-            <span className="absolute left-2 top-2 h-2 w-2 rounded-full bg-sauce" />
-            <span className="absolute right-2 top-3 h-2 w-2 rounded-full bg-sauce" />
-            <span className="absolute bottom-2 left-5 h-2 w-2 rounded-full bg-sauce" />
-          </div>
+        <div className="mx-auto h-20 w-20 overflow-hidden rounded-full border-4 border-gold bg-paper shadow-card">
+          <img
+            src={images.pepperoni}
+            alt=""
+            className="h-full w-full object-cover"
+            loading="lazy"
+            decoding="async"
+          />
         </div>
         <div>
-          <p className="font-display text-4xl uppercase leading-none text-sauce">2nd Pizza</p>
-          <p className="mt-1 text-2xl font-black uppercase leading-none text-coal">Half Off</p>
+          <p className="text-xs font-black uppercase tracking-[0.2em] text-coal/70">Buy one pizza</p>
+          <p className="mt-1 font-display text-4xl uppercase leading-none text-sauce">2nd Half Off</p>
         </div>
       </div>
     </div>
@@ -391,8 +401,15 @@ function DailyDeals() {
         darkText
       />
       <div className="section-shell mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        {dailyDeals.map(([day, title, text]) => (
+        {dailyDeals.map(([day, title, text], index) => (
           <article key={day} className="coupon-card rounded-3xl border-2 border-dashed border-sauce/55 bg-paper p-6 shadow-card">
+            <img
+              src={dailyDealImages[Math.min(index, dailyDealImages.length - 1)]}
+              alt={`${day} Michael's Pizza daily deal`}
+              className="mb-5 aspect-[3/2] w-full rounded-2xl border border-sauce/20 bg-cream object-contain p-2"
+              loading="lazy"
+              decoding="async"
+            />
             <p className="inline-flex rounded-full bg-sauce px-3 py-1 text-xs font-black uppercase tracking-[0.18em] text-cream">
               {day}
             </p>
