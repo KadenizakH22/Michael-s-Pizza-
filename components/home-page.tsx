@@ -256,97 +256,18 @@ function DealStrip() {
             </a>
           </div>
 
-          <div className="bg-ember p-6 text-cream sm:p-10">
-            <div className="relative grid min-h-[330px] overflow-hidden rounded-2xl border-2 border-gold bg-paper p-5 text-coal shadow-card sm:p-7">
-              <div className="absolute inset-x-0 top-0 h-4 checker-edge" />
-              <div className="absolute inset-x-0 bottom-0 h-4 checker-edge" />
-              <div className="relative z-10 flex h-full flex-col justify-between gap-7 rounded-xl border-2 border-dashed border-sauce/65 bg-cream px-5 py-7 text-center shadow-card sm:px-8">
-                <PromoPizzaBoxVisual />
-                <div className="mx-auto w-full max-w-md border-y-4 border-double border-sauce/80 py-6">
-                  <p className="text-sm font-black uppercase tracking-[0.2em] text-coal/72">
-                    Buy one pizza
-                  </p>
-                  <p className="mt-1 font-display text-5xl uppercase leading-none text-sauce sm:text-6xl">
-                    2nd Pizza
-                  </p>
-                  <p className="mt-2 text-3xl font-black uppercase leading-none tracking-wide text-coal sm:text-4xl">
-                    Half Off
-                  </p>
-                </div>
-                <div className="grid gap-3 sm:grid-cols-2">
-                  <p className="rounded-lg border border-sauce/35 bg-paper px-4 py-3 text-xs font-black uppercase tracking-[0.16em] text-sauce">
-                    Any Size
-                  </p>
-                  <p className="rounded-lg border border-sauce/35 bg-paper px-4 py-3 text-xs font-black uppercase tracking-[0.16em] text-sauce">
-                    Any Toppings
-                  </p>
-                </div>
-              </div>
-            </div>
+          <div className="bg-ember">
+            <img
+              src={images.pepperoni}
+              alt="Michael's pepperoni pizza"
+              className="h-full min-h-[330px] w-full rounded-2xl object-cover"
+              loading="lazy"
+              decoding="async"
+            />
           </div>
         </div>
       </div>
     </section>
-  );
-}
-
-function PromoPizzaBoxVisual() {
-  return (
-    <div className="relative mx-auto h-32 w-full max-w-sm" aria-hidden="true">
-      <div className="absolute left-3 top-8 h-20 w-40 rotate-[-5deg] rounded-xl border-2 border-sauce/70 bg-box shadow-card">
-        <div className="absolute inset-x-3 top-3 h-3 rounded-full bg-cream/55" />
-        <div className="absolute inset-x-4 bottom-4 h-8 rounded-lg border-2 border-dashed border-cream/75" />
-      </div>
-      <div className="absolute right-3 top-0 h-28 w-28 overflow-hidden rounded-full border-4 border-gold bg-paper shadow-card">
-        <img
-          src={images.pepperoni}
-          alt=""
-          className="h-full w-full object-cover"
-          loading="lazy"
-          decoding="async"
-        />
-        <div className="absolute inset-0 rounded-full ring-4 ring-inset ring-cream/55" />
-      </div>
-      <div className="absolute left-1/2 top-12 grid h-16 w-16 -translate-x-1/2 place-items-center rounded-full border-4 border-cream bg-gold shadow-card">
-        <div className="relative h-10 w-10 rounded-full border-2 border-crust bg-paper">
-          <span className="absolute left-2 top-2 h-2 w-2 rounded-full bg-sauce" />
-          <span className="absolute right-2 top-3 h-2 w-2 rounded-full bg-sauce" />
-          <span className="absolute bottom-2 left-4 h-2 w-2 rounded-full bg-sauce" />
-        </div>
-      </div>
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 rounded-full border-2 border-sauce bg-cream px-4 py-2 text-xs font-black uppercase tracking-[0.18em] text-sauce shadow-card">
-        Michael&apos;s Deal
-      </div>
-    </div>
-  );
-}
-
-function MiniDealGraphic() {
-  return (
-    <div className="relative h-56 overflow-hidden bg-paper p-4 text-coal">
-      <div className="absolute inset-x-0 top-0 h-4 checker-edge" />
-      <div className="absolute inset-x-0 bottom-0 h-4 checker-edge" />
-      <div className="relative z-10 flex h-full flex-col justify-between rounded-2xl border-2 border-dashed border-sauce/70 bg-cream px-4 py-5 text-center shadow-card">
-        <div className="flex items-center justify-center">
-          <span className="rounded-full bg-sauce px-3 py-1 text-[0.62rem] font-black uppercase tracking-[0.16em] text-cream">
-            Daily Deal
-          </span>
-        </div>
-        <div className="mx-auto h-20 w-20 overflow-hidden rounded-full border-4 border-gold bg-paper shadow-card">
-          <img
-            src={images.pepperoni}
-            alt=""
-            className="h-full w-full object-cover"
-            loading="lazy"
-            decoding="async"
-          />
-        </div>
-        <div>
-          <p className="text-xs font-black uppercase tracking-[0.2em] text-coal/70">Buy one pizza</p>
-          <p className="mt-1 font-display text-4xl uppercase leading-none text-sauce">2nd Half Off</p>
-        </div>
-      </div>
-    </div>
   );
 }
 
@@ -365,7 +286,15 @@ function Favorites() {
             className="group overflow-hidden rounded-3xl border border-crust/20 bg-ember shadow-card transition hover:-translate-y-1 hover:border-gold/60"
           >
             {item.dealGraphic ? (
-              <MiniDealGraphic />
+              <div className="image-wash relative h-56 overflow-hidden bg-coal">
+                <img
+                  src={images.pepperoni}
+                  alt={item.name}
+                  className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
             ) : (
               <div className="image-wash relative h-56 overflow-hidden bg-coal">
                 <img
@@ -472,13 +401,13 @@ function Custard() {
 
 function LocalStory() {
   return (
-    <section className="bg-coal py-16">
-      <div className="section-shell grid items-center gap-10 lg:grid-cols-[1fr_0.9fr]">
-        <div>
+    <section className="w-full max-w-full overflow-x-hidden bg-coal py-16">
+      <div className="section-shell grid min-w-0 max-w-full items-center gap-10 lg:grid-cols-[1fr_0.9fr]">
+        <div className="min-w-0 max-w-full">
           <p className="inline-flex rotate-[-2deg] rounded-full bg-paper px-4 py-2 text-sm font-black uppercase tracking-[0.18em] text-sauce shadow-card">
             Clarksville local legend
           </p>
-          <h2 className="mt-5 font-display text-5xl font-black uppercase leading-none sm:text-6xl">
+          <h2 className="mt-5 max-w-full break-words font-display text-5xl font-black uppercase leading-none sm:text-6xl">
             Locally Owned. Clarksville-Loved.
           </h2>
           <p className="mt-6 max-w-2xl text-lg leading-8 text-cream/76">
@@ -494,11 +423,11 @@ function LocalStory() {
             ))}
           </div>
         </div>
-        <div className="relative overflow-hidden rounded-[2rem] border border-white/10 shadow-card">
+        <div className="relative min-w-0 max-w-full overflow-hidden rounded-[2rem] border border-white/10 shadow-card">
           <img
             src={images.storefront}
             alt="Michael's Pizza storefront"
-            className="h-[430px] w-full object-cover"
+            className="h-[430px] w-full max-w-full object-cover"
             loading="lazy"
             decoding="async"
           />
