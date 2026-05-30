@@ -158,7 +158,7 @@ function Header() {
           </a>
           <a
             href={orderUrl}
-            className="rounded-full bg-gold px-5 py-3 text-sm font-black uppercase tracking-wide text-coal shadow-glow transition hover:-translate-y-0.5 hover:bg-crust"
+            className="rounded-full bg-gold px-5 py-3 text-sm font-black uppercase tracking-wide text-coal shadow-glow transition duration-300 hover:-translate-y-0.5 hover:scale-[1.02] hover:bg-crust"
           >
             Order
           </a>
@@ -179,51 +179,54 @@ function Hero() {
       />
 
       <div className="section-shell relative z-10 grid min-h-[calc(100vh-6rem)] place-items-center py-20 text-center sm:py-24">
-        <div className="max-w-4xl">
-          <p className="mb-7 inline-flex rounded-full border-2 border-gold bg-paper px-5 py-2 text-xs font-black uppercase tracking-[0.18em] text-sauce shadow-card">
-            Clarksville local favorite since 1985
-          </p>
-          <div className="mx-auto grid h-36 w-36 place-items-center rounded-full border-[6px] border-gold bg-paper p-4 shadow-glow sm:h-44 sm:w-44">
-            <div className="grid h-full w-full place-items-center rounded-full border-2 border-sauce/35 bg-cream">
-              <img
-                src={logoImage}
-                alt="Michael's Pizza logo"
-                className="h-24 w-24 object-contain sm:h-32 sm:w-32"
-                decoding="async"
-              />
+        <div className="relative max-w-4xl overflow-hidden rounded-[2rem] px-4 py-8 sm:px-8">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(29,18,13,0.72),rgba(29,18,13,0.42)_46%,rgba(29,18,13,0)_76%)]" />
+          <div className="relative">
+            <p className="mb-7 inline-flex rounded-full border-2 border-gold bg-paper px-5 py-2 text-xs font-black uppercase tracking-[0.18em] text-sauce shadow-card">
+              Clarksville local favorite since 1985
+            </p>
+            <div className="mx-auto grid h-36 w-36 place-items-center rounded-full border-[6px] border-gold bg-paper p-4 shadow-glow sm:h-44 sm:w-44">
+              <div className="grid h-full w-full place-items-center rounded-full border-2 border-sauce/35 bg-cream">
+                <img
+                  src={logoImage}
+                  alt="Michael's Pizza logo"
+                  className="h-24 w-24 object-contain sm:h-32 sm:w-32"
+                  decoding="async"
+                />
+              </div>
             </div>
-          </div>
-          <h1 className="mx-auto mt-8 max-w-4xl font-display text-5xl font-black uppercase leading-[0.98] text-cream drop-shadow-2xl sm:text-6xl lg:text-7xl">
-            Pizza, Custard &amp; Daily Deals in Clarksville
-          </h1>
-          <p className="mx-auto mt-6 max-w-2xl text-lg font-bold leading-8 text-cream/86 sm:text-xl">
-            Family-owned pizza, wings, frozen custard, and fresh daily deals from Michael&apos;s Pizza.
-          </p>
+            <h1 className="mx-auto mt-8 max-w-4xl font-display text-5xl font-black uppercase leading-[0.98] text-cream drop-shadow-2xl sm:text-6xl lg:text-7xl">
+              Pizza, Custard &amp; Daily Deals in Clarksville
+            </h1>
+            <p className="mx-auto mt-6 max-w-2xl text-lg font-bold leading-8 text-cream/86 sm:text-xl">
+              Family-owned pizza, wings, frozen custard, and fresh daily deals from Michael&apos;s Pizza.
+            </p>
 
-          <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
-            <a
-              href={orderUrl}
-              className="rounded-full bg-sauce px-8 py-4 text-center text-sm font-black uppercase tracking-wide text-white shadow-glow transition hover:-translate-y-1 hover:bg-tomato"
-            >
-              Order Online
-            </a>
-            <a
-              href="#menu"
-              className="rounded-full border-2 border-cream/35 bg-ember/65 px-8 py-4 text-center text-sm font-black uppercase tracking-wide text-cream transition hover:-translate-y-1 hover:border-gold hover:text-gold"
-            >
-              View Menu
-            </a>
-            <a
-              href={phoneHref}
-              className="rounded-full bg-gold px-8 py-4 text-center text-sm font-black uppercase tracking-wide text-coal transition hover:-translate-y-1 hover:bg-crust"
-            >
-              Call Now
-            </a>
-          </div>
+            <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
+              <a
+                href={orderUrl}
+                className="rounded-full bg-sauce px-9 py-4 text-center text-sm font-black uppercase tracking-wide text-white shadow-glow transition duration-300 hover:-translate-y-1 hover:scale-[1.02] hover:bg-tomato"
+              >
+                Order Online
+              </a>
+              <a
+                href="#menu"
+                className="rounded-full border-2 border-cream/40 bg-ember/72 px-8 py-4 text-center text-sm font-black uppercase tracking-wide text-cream shadow-card transition duration-300 hover:-translate-y-1 hover:border-gold hover:text-gold"
+              >
+                View Menu
+              </a>
+              <a
+                href={phoneHref}
+                className="rounded-full bg-gold px-8 py-4 text-center text-sm font-black uppercase tracking-wide text-coal shadow-glow transition duration-300 hover:-translate-y-1 hover:scale-[1.02] hover:bg-crust"
+              >
+                Call Now
+              </a>
+            </div>
 
-          <p className="mx-auto mt-9 max-w-2xl rounded-3xl border border-crust/25 bg-ember/70 px-5 py-4 text-sm font-black uppercase tracking-[0.12em] text-cream/86 shadow-card backdrop-blur">
-            {addressDisplay} &bull; Open every day 11 AM - 9 PM
-          </p>
+            <p className="mx-auto mt-9 max-w-2xl rounded-3xl border border-crust/25 bg-ember/70 px-5 py-4 text-sm font-black uppercase tracking-[0.12em] text-cream/86 shadow-card backdrop-blur">
+              {addressDisplay} &bull; Open every day 11 AM - 9 PM
+            </p>
+          </div>
         </div>
       </div>
     </section>
@@ -235,7 +238,7 @@ function DealStrip() {
     <section id="deals" className="paper-texture py-16 text-coal sm:py-20">
       <div className="section-shell">
         <div className="checker-edge mb-8 h-6 rounded-full shadow-card" />
-        <div className="coupon-card grid overflow-hidden rounded-3xl border-4 border-dashed border-sauce bg-cream shadow-card lg:grid-cols-[0.95fr_1.05fr]">
+        <div className="coupon-card grid overflow-hidden rounded-3xl border-4 border-dashed border-sauce bg-cream shadow-card transition duration-300 hover:-translate-y-1 hover:shadow-glow lg:grid-cols-[0.95fr_1.05fr]">
           <div className="border-b-4 border-dashed border-sauce/55 p-8 sm:p-12 lg:border-b-0 lg:border-r-4 lg:p-14">
             <p className="inline-flex rounded-full bg-sauce px-4 py-2 text-sm font-black uppercase tracking-[0.16em] text-cream shadow-card">
               Limited Time Offer
@@ -250,7 +253,7 @@ function DealStrip() {
             </p>
             <a
               href={orderUrl}
-              className="mt-8 inline-flex rounded-full bg-sauce px-8 py-4 text-sm font-black uppercase tracking-wide text-cream transition hover:-translate-y-1 hover:bg-tomato"
+              className="mt-8 inline-flex rounded-full bg-sauce px-9 py-4 text-sm font-black uppercase tracking-wide text-cream shadow-card transition duration-300 hover:-translate-y-1 hover:scale-[1.02] hover:bg-tomato"
             >
               Order Now
             </a>
@@ -260,7 +263,7 @@ function DealStrip() {
             <img
               src={images.pepperoni}
               alt="Michael's pepperoni pizza"
-              className="h-full min-h-[330px] w-full rounded-2xl object-cover"
+              className="h-full min-h-[330px] w-full rounded-2xl object-cover transition duration-500 hover:scale-[1.02]"
               loading="lazy"
               decoding="async"
             />
@@ -279,11 +282,11 @@ function Favorites() {
         title="Pizza-Shop Comfort, Made Local"
         text="Michael's serves hand-made pizzas, wings, subs, cheesy starters, salads, frozen custard, and weekly specials."
       />
-      <div className="section-shell mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="section-shell mt-12 grid items-stretch gap-5 sm:grid-cols-2 lg:grid-cols-4">
         {favorites.map((item) => (
           <article
             key={item.name}
-            className="group overflow-hidden rounded-3xl border border-crust/20 bg-ember shadow-card transition hover:-translate-y-1 hover:border-gold/60"
+            className="group flex h-full flex-col overflow-hidden rounded-3xl border border-crust/20 bg-ember shadow-card transition duration-300 hover:-translate-y-1 hover:border-gold/60 hover:shadow-glow"
           >
             {item.dealGraphic ? (
               <div className="image-wash relative h-56 overflow-hidden bg-coal">
@@ -306,10 +309,15 @@ function Favorites() {
                 />
               </div>
             )}
-            <div className="p-6">
+            <div className="flex flex-1 flex-col p-6">
+              {item.dealGraphic && (
+                <span className="mb-3 inline-flex w-fit rounded-full bg-gold px-3 py-1 text-[0.68rem] font-black uppercase tracking-[0.16em] text-coal">
+                  Daily Deal
+                </span>
+              )}
               <h3 className="font-display text-3xl uppercase text-cream">{item.name}</h3>
               <p className="mt-3 text-sm leading-6 text-cream/70">{item.text}</p>
-              <a href={orderUrl} className="mt-5 inline-flex text-sm font-black uppercase tracking-[0.18em] text-gold">
+              <a href={orderUrl} className="mt-auto inline-flex pt-5 text-sm font-black uppercase tracking-[0.18em] text-gold transition duration-300 hover:translate-x-1 hover:text-crust">
                 Order {item.name}
               </a>
             </div>
@@ -329,13 +337,13 @@ function DailyDeals() {
         text="Simple weekly deals for pizza nights, family dinners, and custard cravings."
         darkText
       />
-      <div className="section-shell mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="section-shell mt-12 grid items-stretch gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {dailyDeals.map(([day, title, text], index) => (
-          <article key={day} className="coupon-card rounded-3xl border-2 border-dashed border-sauce/55 bg-paper p-6 shadow-card">
+          <article key={day} className="coupon-card flex h-full flex-col rounded-3xl border-2 border-dashed border-sauce/55 bg-paper p-6 shadow-card transition duration-300 hover:-translate-y-1 hover:border-sauce hover:shadow-glow">
             <img
               src={dailyDealImages[Math.min(index, dailyDealImages.length - 1)]}
               alt={`${day} Michael's Pizza daily deal`}
-              className="mb-5 aspect-[3/2] w-full rounded-2xl border border-sauce/20 bg-cream object-contain p-2"
+              className="mb-5 aspect-[3/2] w-full rounded-2xl border border-sauce/20 bg-cream object-contain p-2 transition duration-300 hover:scale-[1.02]"
               loading="lazy"
               decoding="async"
             />
@@ -350,7 +358,7 @@ function DailyDeals() {
       <div className="mt-10 text-center">
         <a
           href={orderUrl}
-          className="inline-flex rounded-full bg-sauce px-8 py-4 text-sm font-black uppercase tracking-wide text-cream shadow-card transition hover:-translate-y-1 hover:bg-tomato"
+          className="inline-flex rounded-full bg-sauce px-9 py-4 text-sm font-black uppercase tracking-wide text-cream shadow-glow transition duration-300 hover:-translate-y-1 hover:scale-[1.02] hover:bg-tomato"
         >
           Order Online
         </a>
@@ -363,7 +371,7 @@ function Custard() {
   return (
     <section id="custard" className="bg-cream py-16 text-coal sm:py-20">
       <div className="section-shell grid items-center gap-10 lg:grid-cols-[0.9fr_1.1fr]">
-        <div className="relative overflow-hidden rounded-[2rem] border-4 border-crust shadow-card">
+        <div className="relative overflow-hidden rounded-[2rem] border-4 border-crust shadow-card transition duration-300 hover:-translate-y-1 hover:shadow-glow">
           <img
             src={images.custard}
             alt="Michael's frozen custard shakes"
@@ -389,7 +397,7 @@ function Custard() {
           </p>
           <a
             href={orderUrl}
-            className="mt-8 inline-flex rounded-full bg-gold px-8 py-4 text-sm font-black uppercase tracking-wide text-coal transition hover:-translate-y-1 hover:bg-crust"
+            className="mt-8 inline-flex rounded-full bg-gold px-9 py-4 text-sm font-black uppercase tracking-wide text-coal shadow-card transition duration-300 hover:-translate-y-1 hover:scale-[1.02] hover:bg-crust"
           >
             Order Custard
           </a>
@@ -415,7 +423,7 @@ function LocalStory() {
           </p>
           <div className="mt-8 grid min-w-0 gap-4 sm:grid-cols-3">
             {["Since 1985", "Hometown taste", "Daily value"].map((item) => (
-              <div key={item} className="min-w-0 rounded-2xl border border-white/10 bg-ember px-4 py-5 text-center">
+              <div key={item} className="min-w-0 rounded-2xl border border-white/10 bg-ember px-4 py-5 text-center shadow-card transition duration-300 hover:-translate-y-1 hover:border-gold/50">
                 <p className="break-words font-display text-[1.65rem] uppercase leading-[0.95] text-gold sm:text-[1.35rem] md:text-[1.55rem] xl:text-3xl">
                   {item}
                 </p>
@@ -423,11 +431,11 @@ function LocalStory() {
             ))}
           </div>
         </div>
-        <div className="relative min-w-0 max-w-full overflow-hidden rounded-[2rem] border border-white/10 shadow-card">
+        <div className="relative min-w-0 max-w-full overflow-hidden rounded-[2rem] border border-white/10 shadow-card transition duration-300 hover:-translate-y-1 hover:shadow-glow">
           <img
             src={images.storefront}
             alt="Michael's Pizza storefront"
-            className="h-[430px] w-full max-w-full object-cover"
+            className="h-[430px] w-full max-w-full object-cover lg:h-[490px]"
             loading="lazy"
             decoding="async"
           />
@@ -446,18 +454,18 @@ function Gallery() {
         title="Hot, Saucy, Sweet, and Local"
         text="Real Michael's food and storefront photos keep the page focused on the shop, not generic stock imagery."
       />
-      <div className="section-shell mt-10 grid auto-rows-[220px] gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="section-shell mt-12 grid auto-rows-[220px] gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {gallery.map((item, index) => (
           <figure
             key={item.label}
-            className={`image-wash relative overflow-hidden rounded-3xl border border-white/10 shadow-card ${
+            className={`image-wash group relative overflow-hidden rounded-3xl border border-white/10 shadow-card transition duration-300 hover:-translate-y-1 hover:border-gold/40 hover:shadow-glow ${
               index === 0 || index === 5 ? "lg:col-span-2 lg:row-span-2" : ""
             }`}
           >
             <img
               src={item.src}
               alt={item.label}
-              className="h-full w-full object-cover transition duration-500 hover:scale-105"
+              className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
               loading="lazy"
               decoding="async"
             />
@@ -479,9 +487,9 @@ function FAQ() {
         title="Before You Call or Come By"
         text="Quick answers for ordering, hours, custard, deals, and the Clarksville location."
       />
-      <div className="section-shell mt-10 max-w-3xl">
+      <div className="section-shell mt-12 max-w-3xl">
         {faqs.map(([question, answer]) => (
-          <details key={question} className="mb-3 overflow-hidden rounded-2xl border border-white/10 bg-ember">
+          <details key={question} className="mb-3 overflow-hidden rounded-2xl border border-white/10 bg-ember transition duration-300 hover:-translate-y-0.5 hover:border-gold/40">
             <summary className="cursor-pointer px-6 py-5 font-display text-2xl uppercase marker:text-gold">
               {question}
             </summary>
@@ -510,18 +518,18 @@ function Location() {
             <InfoCard label="Hours" value="Open every day 11 AM - 9 PM" />
           </div>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <a href={directionsUrl} className="rounded-full bg-gold px-7 py-4 text-center text-sm font-black uppercase tracking-wide text-coal">
+            <a href={directionsUrl} className="rounded-full bg-gold px-7 py-4 text-center text-sm font-black uppercase tracking-wide text-coal shadow-card transition duration-300 hover:-translate-y-1 hover:scale-[1.02] hover:bg-crust">
               Get Directions
             </a>
-            <a href={phoneHref} className="rounded-full border border-white/15 px-7 py-4 text-center text-sm font-black uppercase tracking-wide">
+            <a href={phoneHref} className="rounded-full border border-white/15 px-7 py-4 text-center text-sm font-black uppercase tracking-wide transition duration-300 hover:-translate-y-1 hover:border-gold hover:text-gold">
               Call Now
             </a>
-            <a href={orderUrl} className="rounded-full bg-sauce px-7 py-4 text-center text-sm font-black uppercase tracking-wide text-white">
+            <a href={orderUrl} className="rounded-full bg-sauce px-7 py-4 text-center text-sm font-black uppercase tracking-wide text-white shadow-card transition duration-300 hover:-translate-y-1 hover:scale-[1.02] hover:bg-tomato">
               Order Online
             </a>
           </div>
         </div>
-        <div className="overflow-hidden rounded-[2rem] border-4 border-crust/35 bg-ember shadow-card">
+        <div className="overflow-hidden rounded-[2rem] border-4 border-crust/35 bg-ember shadow-card transition duration-300 hover:-translate-y-1 hover:shadow-glow">
           <iframe
             title="Map to Michael's Pizza in Clarksville"
             src={mapEmbedUrl}
@@ -530,7 +538,7 @@ function Location() {
             referrerPolicy="no-referrer-when-downgrade"
           />
           <div className="flex justify-center border-t border-crust/20 bg-ember p-5 sm:justify-end">
-            <a href={directionsUrl} className="rounded-full bg-gold px-6 py-3 text-center text-sm font-black uppercase tracking-wide text-coal">
+            <a href={directionsUrl} className="rounded-full bg-gold px-6 py-3 text-center text-sm font-black uppercase tracking-wide text-coal shadow-card transition duration-300 hover:-translate-y-1 hover:bg-crust">
               Get Directions
             </a>
           </div>
